@@ -25,5 +25,13 @@ The example demonstrates a privilege escalation vulnerability and how to exploit
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+
+insecure.ts is vulnerable to privilege escalation due to insecure authentication and authorization checks. It relies solely on user-provided IDs and roles without verifying the authenticity of the user.
+
 2. Briefly explain how a malicious attacker can exploit them.
+
+attacker can exploit this vulnerability by sending a POST request with a different user ID and role, such as userId = 1 & newRole = admin, to escalate their privileges and gain unauthorized access to administrative functions.
+
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the privilege escalation vulnerability?
+
+secure.ts prevents privilege escalation by implementing session-based authentication and authorization. It verifies the logged-in user's session and ensures that only users with the 'admin' role can update roles.

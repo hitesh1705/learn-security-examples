@@ -1,0 +1,22 @@
+1. Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+
+
+Vulnerability: The code in insecure.ts allows privilege escalation by relying on user-provided 
+IDs and roles without proper verification.
+
+Secure Version: The secure version uses session-based authentication and authorization, ensuring 
+only authenticated users with the 'admin' role can update roles.
+
+
+
+2. What additional security mechanisms can you incorporate to prevent such attacks?
+
+
+
+Multi-Factor Authentication
+Role-Based Access Control
+Audit Logging
+Input Validation and Sanitization
+Rate Limiting
+Secure Coding Practices
