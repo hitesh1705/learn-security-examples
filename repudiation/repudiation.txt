@@ -1,2 +1,17 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+Vulnerability: insecure.ts lacks proper logging, allowing users to deny their actions.
+
+Secure Version: secure.ts implements detailed logging of user actions with timestamps 
+                and user information, providing a reliable record to verify activities.
+
+
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Digital Signatures: Ensure log integrity and authenticity.
+Tamper-Evident Logs: Detect unauthorized changes to logs.
+Access Controls: Restrict log access to authorized personnel.
+Encryption: Protect log files from unauthorized access.
+Regular Audits: Detect and respond to suspicious activities.
+Immutable Logs: Prevent modifications after logs are written.
