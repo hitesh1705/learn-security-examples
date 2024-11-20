@@ -25,5 +25,13 @@ This example demonstrates tampering through script injection.
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts**
+
+insecure.ts lacks input validation and sanitization, allowing for script injection attacks.
+
 2. Briefly explain how a malicious attacker can exploit them.
+
+Attackers can inject malicious scripts into input fields, leading to data theft, session hijacking, or defacement.
+
 3. Briefly explain why **secure.ts** does not have the same vulnerabilties?
+
+secure.ts implements input validation and sanitization to prevent script injection.
