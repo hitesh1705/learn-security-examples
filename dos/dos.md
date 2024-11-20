@@ -31,5 +31,13 @@ This will create a database in MongoDB called __infodisclosure__. Verify its pre
 Answer the following:
 
 1. Briefly explain the potential vulnerabilities in **insecure.ts** that can lead to a DoS attack.
+
+insecure.ts is vulnerable to NoSQL injection due to the lack of input validation and sanitization. This allows attackers to craft malicious queries that can overwhelm the server, leading to a DoS attack.
+
 2. Briefly explain how a malicious attacker can exploit them.
+
+attacker can exploit this vulnerability by sending a malicious request, such as http://localhost:3000/userinfo?id[$ne]=, which can cause the server to perform expensive database operations, potentially leading to server crashes or unresponsiveness.
+
 3. Briefly explain the defensive techniques used in **secure.ts** to prevent the DoS vulnerability?
+
+secure.ts uses input validation and sanitization to ensure that user inputs are safe and do not contain malicious query objects. Additionally, it implements rate limiting using the express-rate-limit middleware to restrict the number of requests from a single IP address, mitigating the risk of DoS attacks.
